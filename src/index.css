@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --accent: #a855f7;
+  --bg: #000000;
+  --bg-card: #0a0a1a;
+  --bg-elevated: #0d0d1a;
+  --border: #1f1f2e;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --glow: rgba(99, 102, 241, 0.4);
+}
+
+html, body {
+  height: 100%;
+  background: #000000;
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100%;
+  min-height: 100vh;
+  background: #000000;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a3e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a5e; }
+
+/* Ant Design overrides */
+.ant-btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3) !important;
+}
+.ant-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5) !important;
+}
+.ant-btn-default {
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+  background: var(--bg-card) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+.ant-btn-default:hover {
+  border-color: var(--primary) !important;
+  color: var(--primary-light) !important;
+  transform: translateY(-1px) !important;
+}
+.ant-input {
+  background: #0a0a1a !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+.ant-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.2) !important;
+}
+.ant-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+}
+.ant-modal-content {
+  background: #0a0a14 !important;
+  border: 1px solid var(--border) !important;
+}
+.ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+.ant-modal-title {
+  color: var(--text) !important;
+}
+.ant-message-notice-content {
+  background: #0d0d1a !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* Glow pulsing animation */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.3); }
+  50% { box-shadow: 0 0 40px rgba(99,102,241,0.6), 0 0 80px rgba(168,85,247,0.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.fade-in-up { animation: fade-in-up 0.6s ease forwards; }
+.slide-in-right { animation: slide-in-right 0.4s ease forwards; }
